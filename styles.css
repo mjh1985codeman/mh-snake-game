@@ -20,6 +20,13 @@ body {
     grid-template-columns: repeat(21, 1fr);
 }
 
+#score-board {
+    background-color: hsl(0, 0%, 100%);
+    font-size: larger;
+    color: hsl(0, 0%, 0%);
+
+}
+
 /* snake stylings */
 
 .snake {

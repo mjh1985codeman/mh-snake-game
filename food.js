@@ -3,11 +3,14 @@ import { randomGridPosition } from "./grid.js";
 
 let food = getRandomFoodPosition();
 const snakeExpansionRate = 1;
+export let score = 0;
 
 export function update() {
   if (onSnake(food)) {
     expandSnake(snakeExpansionRate);
     food = getRandomFoodPosition();
+    score++;
+    console.log(score);
   }
 }
 

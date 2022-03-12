@@ -8,18 +8,19 @@ import {
   snakeIntersection,
 } from "./snake.js";
 
-import { update as updateFood, draw as drawFood } from "./food.js";
+import { update as updateFood, draw as drawFood, score } from "./food.js";
 
 import { outsideGrid } from "./grid.js";
 
 const gameBoard = document.getElementById("game-board");
+const scoreBoard = document.getElementById("score-board");
 let gameOver = false;
 
 //Game Loop.
 // currentTime is in milliSeconds.
 function main(currentTime) {
   if (gameOver) {
-    return alert("The Game is Over");
+    return;
   }
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000; //dividing by 1000 to convert from milliseconds to seconds.
   //this makes the browser tell us when we can render our next frame.
@@ -49,4 +50,9 @@ function draw() {
 
 function checkDeath() {
   gameOver = outsideGrid(getSnakeHead()) || snakeIntersection();
+  if (gameOver) {
+    const scoreElement = document.createElement("div");
+    scoreElement.innerHTML = `Your Score is ${score}`;
+    scoreBoard.appendChild(scoreElement);
+  }
 }
