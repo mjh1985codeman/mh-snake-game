@@ -48,3 +48,7 @@ body {
     min-width: 5vh;
     min-height: 5vh;
 }
+
+.hide {
+    display: none;
+}

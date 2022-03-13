@@ -14,6 +14,7 @@ import { outsideGrid } from "./grid.js";
 
 const gameBoard = document.getElementById("game-board");
 const scoreBoard = document.getElementById("score-board");
+const playAgainBtn = document.getElementById("play-again-btn");
 let gameOver = false;
 
 //Game Loop.
@@ -54,5 +55,13 @@ function checkDeath() {
     const scoreElement = document.createElement("div");
     scoreElement.innerHTML = `Your Score is ${score}`;
     scoreBoard.appendChild(scoreElement);
+    playAgainPrompt();
+    return gameOver;
+  }
+}
+
+function playAgainPrompt() {
+  if (gameOver) {
+    playAgainBtn.classList.remove("hide");
   }
 }
