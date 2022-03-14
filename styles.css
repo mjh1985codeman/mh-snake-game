@@ -1,19 +1,15 @@
 body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    background-color: hsl(0, 0%, 0%);
+        background-color: rgb(31, 28, 28);
+        margin: 0;
 }
 
 /* Game Board Styling */
 
 #game-board {
     background-color: hsla(183, 55%, 78%, 0.76);
-    width: 100vmin;
-    max-height: 80vmin;
     display: grid;
+    align-content: stretch;    
+    min-height: 100vh;
     /* this is what give us our even squares on the gameboard for the game */
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
@@ -24,10 +20,7 @@ body {
     background-color: hsl(0, 0%, 100%);
     font-size: 2vh;
     color: hsl(0, 0%, 0%);
-    margin-top: 1%;
-    margin-bottom: 1%;
     
-
 }
 
 /* snake stylings */
@@ -37,16 +30,13 @@ body {
     background-color: hsl(183, 55%, 10%);
     border: .25vmin solid black;
     border-radius: 50%;
-    min-width: 4vh;
-    min-height: 4vh;
 }
 
 .food {
     display: flex;
     background-image: url("./assets/apple.png");
     background-repeat: no-repeat;
-    min-width: 5vh;
-    min-height: 5vh;
+ 
 }
 
 .hide {
